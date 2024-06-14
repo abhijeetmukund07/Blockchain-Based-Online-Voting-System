@@ -1,0 +1,58 @@
+.profile-info {
+    margin-bottom: 30px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.2rem;
+}
+
+.already-voted {
+    font-size: 0.9rem;
+    color: #f00;
+    margin: 0;
+}
+
+.voted {
+    opacity: 0.6;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.fixed-top {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.fixed-bottom {
+    position: sticky;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}

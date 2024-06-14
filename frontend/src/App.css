@@ -1,0 +1,15 @@
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+}
+
+.push {
+  height: 100px; /* Height of the footer */
+}
+
+.foot {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px; /* Height of the footer */
+}

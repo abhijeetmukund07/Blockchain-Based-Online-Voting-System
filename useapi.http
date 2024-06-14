@@ -1,0 +1,105 @@
+###user creation
+post http://localhost:4000/voters-api/register
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "username":"rikhil1",
+    "password":"1234",
+    "Name":"rikhil",
+    "phone":"1234567899",
+    "dob": "1990-01-01",
+    "gender":"Male"
+}
+
+
+#### user login
+post http://localhost:4000/voters-api/login
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "username":"rikhil",
+    "password":"1234"
+   
+}
+
+
+#### admin login
+post http://localhost:4000/admin-api/login
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "username":"rikhil",
+    "password":"1234"
+   
+}
+
+### admin voter count
+get  http://localhost:4000/admin-api/count
+
+### admin add election
+post http://localhost:4000/admin-api/addElection
+Content-Type: application/json
+
+{
+    "electionTitle":"Ele1",
+    "startDate":"YYYY-MM-DD HH:mm:ss",
+    "endDate":"YYYY-MM-DD HH:mm:ss"
+}
+
+### admin delete election
+DELETE http://localhost:4000/admin-api/deleteElection/Ele1
+
+
+###  user vote
+get http://localhost:4000/voters-api/vote/rikhil
+
+### voted count
+get http://localhost:4000/admin-api/votedcount
+
+### stop the election
+put http://localhost:4000/admin-api/stopElection/Ele1
+
+### get count of elections
+get http://localhost:4000/admin-api/electionsCount
+
+### get the voter list
+get http://localhost:4000/admin-api/voterList
+
+### get the elections
+get http://localhost:4000/admin-api/elections
+
+### post the participants
+post http://localhost:4000/admin-api/elections/Ele1/participants
+Content-Type: application/json
+
+{
+    "name":"C1",
+    "description":"A very enthusiastic person",
+    "numberOfVotes":0
+}
+
+### get the participants
+get http://localhost:4000/admin-api/elections/Ele1
+
+### vote 
+post  http://localhost:4000/voters-api/vote/Ele1/rikhil/2
+
+### has voted or not
+get http://localhost:4000/voters-api/hasVoted/Ele1/rikhil
+
+### get voter profile
+get  http://localhost:4000/voters-api/voter/rikhil
+
+### get ongoing election results
+get http://localhost:4000/admin-api//results/ongoingElection
+
+### post results
+post http://localhost:4000/admin-api/resultsPost
+Content-Type: application/json
+
+{
+
+}

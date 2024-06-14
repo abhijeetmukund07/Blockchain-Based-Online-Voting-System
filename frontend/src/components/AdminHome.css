@@ -1,0 +1,59 @@
+.adminHomeContainer {
+    min-height: calc(100vh - 80px); /* Subtract the footer height */
+    position: relative;
+    padding-bottom: 80px; /* Set padding at bottom for footer */
+}
+
+.foot {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px; /* Adjust height as needed */
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.adminHomeContainer {
+    margin-top: 50px;
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.card-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-warning:hover {
+    color: #fff;
+    background-color: #ffca28;
+    border-color: #ffca28;
+}
