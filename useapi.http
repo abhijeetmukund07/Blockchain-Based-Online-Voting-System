@@ -8,8 +8,10 @@ Content-Type: application/json
     "password":"1234",
     "Name":"rikhil",
     "phone":"1234567899",
-    "dob": "1990-01-01",
-    "gender":"Male"
+    "dob": "2002-01-01",
+    "gender":"Male",
+    "voterid":"ZPC1122"
+
 }
 
 
