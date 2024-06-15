@@ -1,10 +1,184 @@
-import { ethers } from 'ethers';
-import { contractAbi, contractAddress } from './Constant/constant';
+import { ethers } from "ethers";
+// import { contractAbi } from '../buildContracts';
+
+const contractAddress = "0xB70854Dd0fdc4b970ABD27cd83cE411c79002C60";
+const contractAbi = [
+  {
+    inputs: [],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
+    inputs: [
+      {
+        internalType: "string",
+        name: "_name",
+        type: "string",
+      },
+      {
+        internalType: "string",
+        name: "_gender",
+        type: "string",
+      },
+      {
+        internalType: "string",
+        name: "_party",
+        type: "string",
+      },
+    ],
+    name: "addCandidate",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "admin",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "currentElection",
+    outputs: [
+      {
+        internalType: "string",
+        name: "name",
+        type: "string",
+      },
+      {
+        internalType: "bool",
+        name: "isActive",
+        type: "bool",
+      },
+      {
+        internalType: "uint256",
+        name: "candidatesCount",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "declareWinner",
+    outputs: [
+      {
+        internalType: "string",
+        name: "winnerName",
+        type: "string",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "electionInProgress",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "endVotingPhase",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getCandidates",
+    outputs: [
+      {
+        components: [
+          {
+            internalType: "string",
+            name: "name",
+            type: "string",
+          },
+          {
+            internalType: "string",
+            name: "gender",
+            type: "string",
+          },
+          {
+            internalType: "string",
+            name: "party",
+            type: "string",
+          },
+          {
+            internalType: "uint256",
+            name: "voteCount",
+            type: "uint256",
+          },
+        ],
+        internalType: "struct VotingSystem.Candidate[]",
+        name: "",
+        type: "tuple[]",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "string",
+        name: "_name",
+        type: "string",
+      },
+    ],
+    name: "startNewElection",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "startVotingPhase",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "candidateId",
+        type: "uint256",
+      },
+      {
+        internalType: "string",
+        name: "voterId",
+        type: "string",
+      },
+    ],
+    name: "vote",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+];
 
 // Function to request the user's Ethereum accounts
 async function requestAccount() {
   if (window.ethereum) {
-    await window.ethereum.request({ method: 'eth_requestAccounts' });
+    await window.ethereum.request({ method: "eth_requestAccounts" });
   } else {
     console.error("Metamask is not detected in the browser");
   }
@@ -50,7 +224,7 @@ async function getCandidates() {
     name: candidate.name,
     gender: candidate.gender,
     party: candidate.party,
-    voteCount: candidate.voteCount.toNumber()
+    voteCount: candidate.voteCount.toNumber(),
   }));
 }
 
@@ -147,5 +321,5 @@ export {
   getCurrentStatus,
   getRemainingTime,
   handleAccountsChanged,
-  connectToMetamask
+  connectToMetamask,
 };
